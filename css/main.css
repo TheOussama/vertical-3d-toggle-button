@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800;900&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-primary: #68cdfe;
+  --color-primary-dark: #1997c5;
+  --color-secondary: #2d3138;
+  --color-secondary-dark: #0f1214;
+  --color-light: #fff;
+  --color-dark: #000;
+  --color-bg: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Popppins", sans-serif;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.toggle {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 20rem;
+  perspective: 20rem;
+  border: 0.2rem solid var(--color-dark);
+  width: 4.4rem;
+  height: 10rem;
+  margin-right: 1rem;
+  border-radius: 4rem;
+}
+
+.toggle input[type="checkbox"] {
+  position: relative;
+  width: 4rem;
+  height: 10rem;
+  margin: 0;
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-transition: 0.5;
+  transition: 0.5;
+  cursor: pointer;
+}
+
+.toggle input[type="checkbox"]:checked ~ span:nth-child(2):before {
+  -webkit-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+}
+
+.toggle input[type="checkbox"]:checked ~ span:nth-child(3):before {
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+.toggle span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  line-height: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.4rem;
+  pointer-events: none;
+  color: var(--color-light);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.toggle span:nth-child(2) {
+  top: 0;
+  color: var(--color-secondary);
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+  background: var(--color-primary);
+}
+
+.toggle span:nth-child(2):before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(var(--color-secondary)),
+    to(var(--color-secondary-dark))
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--color-secondary),
+    var(--color-secondary-dark)
+  );
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.toggle span:nth-child(3) {
+  bottom: 0;
+  color: var(--color-light);
+  border-bottom-right-radius: 4rem;
+  border-bottom-left-radius: 4rem;
+  background: var(--color-secondary);
+}
+
+.toggle span:nth-child(3):before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(var(--color-primary-dark)),
+    to(var(--color-primary))
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary-dark),
+    var(--color-primary)
+  );
+  border-bottom-right-radius: 4rem;
+  border-bottom-left-radius: 4rem;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
